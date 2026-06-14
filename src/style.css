@@ -366,3 +366,86 @@ textarea {
 
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
+
+.edit-btn {
+    background: #A8DADC;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.post-actions {
+    justify-content: flex-end;
+}
+
+.post-form input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+
+    border: 2px solid #FFD6A5;
+    border-radius: 12px;
+
+    font-family: inherit;
+}
+
+.edit-btn {
+    display: block;
+    margin: 20px auto 0;
+}
+
+.post-form {
+    max-width: 750px;   /* ← ここ広げる */
+    margin: 80px auto;
+    padding: 40px;      /* ← 中の余白も増やす */
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+.post-form input {
+    width: 100%;
+    padding: 18px;   /* ← ちょい大きく */
+    font-size: 16px;
+}
+
+.post-form button[type="button"] {
+    background: #ccc;
+    color: #333;
+
+    padding: 10px 20px;
+    border-radius: 12px;
+
+    margin-top: 10px;
+}
+.back-btn {
+    background: #f5f5f5;
+    color: #5C4033;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 10px 18px;
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+     align-self: flex-start;
+}
+
+.back-btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
