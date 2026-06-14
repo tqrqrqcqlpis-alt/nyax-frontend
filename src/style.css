@@ -9,8 +9,12 @@ body {
     margin: 0;
     background-color: #FFF8F0;
     color: #5C4033;
-
     font-family: 'Zen Maru Gothic', 'M PLUS Rounded 1c', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 h1 {
@@ -22,7 +26,8 @@ h1 {
    Header
 ===================== */
 header {
-    background-color: #F4A261;
+    background-color: #FFB6C1;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,16 +40,9 @@ header {
 }
 
 .logo {
-    text-decoration: none;
     color: white;
     font-weight: 700;
     font-size: 28px;
-    font-family: 'Zen Maru Gothic', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 nav {
@@ -53,7 +51,6 @@ nav {
 }
 
 nav a {
-    text-decoration: none;
     color: white;
     font-weight: 500;
     padding: 8px 12px;
@@ -69,25 +66,85 @@ nav a:hover {
    Post
 ===================== */
 .post {
-    background-color: white;
-    border-radius: 12px;
+    background: white;
+
+    max-width: 600px;
+    margin: 16px auto;
     padding: 16px;
-    margin: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    transition: 0.2s;
 }
 
+.post:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
+}
+
+.post-time {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.post p {
+    line-height: 1.8;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* =====================
+   Like Button
+===================== */
 .like-btn {
     background-color: #FFD6A5;
+
     border: none;
     border-radius: 20px;
+
     padding: 8px 16px;
+
     cursor: pointer;
+
     transition: 0.2s;
 }
 
 .like-btn:hover {
     background-color: #E76F51;
     color: white;
+
+    transform: scale(1.05);
+}
+
+/* =====================
+   Delete Button
+===================== */
+.delete-btn {
+    background: #f5f5f5;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 8px 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ffd6d6;
+
+    transform: scale(1.05);
 }
 
 /* =====================
@@ -95,12 +152,15 @@ nav a:hover {
 ===================== */
 .post-form {
     background: white;
+
     max-width: 700px;
     margin: 30px auto;
     padding: 30px;
 
     border-radius: 20px;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
     text-align: center;
 }
 
@@ -122,17 +182,45 @@ textarea {
     font-family: inherit;
 }
 
-.submit-btn {
-    margin-top: 20px;
+/* =====================
+   Buttons
+===================== */
+.submit-btn,
+.login-btn,
+.edit-btn {
     background: #F4A261;
     color: white;
 
     border: none;
     border-radius: 12px;
 
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.submit-btn {
+    margin-top: 20px;
     padding: 12px 24px;
     font-size: 16px;
-    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.edit-btn {
+    padding: 12px 24px;
+    margin-top: 15px;
+}
+
+.submit-btn:hover,
+.login-btn:hover,
+.edit-btn:hover {
+    background: #E76F51;
+    transform: translateY(-2px);
 }
 
 /* =====================
@@ -140,12 +228,15 @@ textarea {
 ===================== */
 .login-container {
     background: white;
+
     width: 400px;
     margin: 80px auto;
     padding: 40px;
 
     border-radius: 20px;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
     text-align: center;
 }
 
@@ -156,30 +247,14 @@ textarea {
 
 .login-container input {
     width: 100%;
+
     padding: 12px;
     margin-bottom: 15px;
 
     border: 2px solid #FFD6A5;
     border-radius: 10px;
+
     font-family: inherit;
-}
-
-.login-btn {
-    width: 100%;
-    background: #F4A261;
-    color: white;
-
-    border: none;
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 16px;
-
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.login-btn:hover {
-    background: #E76F51;
 }
 
 .welcome-message {
@@ -192,11 +267,13 @@ textarea {
 ===================== */
 .profile-card {
     background: white;
+
     max-width: 700px;
     margin: 30px auto;
     padding: 30px;
 
     border-radius: 20px;
+
     text-align: center;
 
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -207,9 +284,11 @@ textarea {
     height: 100px;
 
     margin: 0 auto;
+
     border-radius: 50%;
 
     background: #FFD6A5;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,31 +296,21 @@ textarea {
     font-size: 50px;
 }
 
-.edit-btn {
-    background: #F4A261;
-    color: white;
-
-    border: none;
-    padding: 12px 24px;
-
-    border-radius: 12px;
-    cursor: pointer;
-
-    margin-top: 15px;
-}
-
-/* stats */
 .stats {
     display: flex;
     justify-content: center;
     gap: 25px;
+
     margin-top: 25px;
 }
 
 .stat {
     background: #FFF8F0;
+
     padding: 15px 25px;
+
     border-radius: 15px;
+
     min-width: 120px;
 }
 
@@ -252,37 +321,48 @@ textarea {
 .about-card,
 .recent-posts {
     background: white;
+
     max-width: 700px;
     margin: 20px auto;
     padding: 25px;
 
     border-radius: 20px;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .cat-list {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
 }
 
 .cat-item {
     background: #FFF8F0;
+
     padding: 15px 25px;
+
     border-radius: 15px;
+
     text-align: center;
 }
 
+/* =====================
+   Flash Message
+===================== */
 .success-message {
-    background: #d4edda;
-    color: #155724;
-
-    padding: 12px;
-    margin: 20px auto;
+    background: #E8F8E8;
+    color: #2E7D32;
 
     max-width: 700px;
 
-    border-radius: 10px;
+    margin: 20px auto;
+    padding: 15px;
+
+    border-radius: 15px;
 
     text-align: center;
+    font-weight: bold;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }

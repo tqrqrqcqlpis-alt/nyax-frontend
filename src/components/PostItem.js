@@ -5,8 +5,17 @@ export default function PostItem({ post,handleLike,handleDelete }) {
       <h3>たまにゃん</h3>
 
       <p className="post-time">
-        {post.createdAt}
-      </p>
+  {new Date(post.createdAt).toLocaleString(
+    "ja-JP",
+    {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    }
+  )}
+</p>
 
       <p>{post.content}</p>
 
@@ -20,6 +29,7 @@ export default function PostItem({ post,handleLike,handleDelete }) {
 </button>
 
         <button
+  className="delete-btn"
   onClick={() => handleDelete(post.id)}
 >
   🗑️
